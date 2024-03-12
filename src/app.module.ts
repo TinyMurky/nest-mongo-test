@@ -14,7 +14,9 @@ import { CatsModule } from './cats/cats.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.MONGO_URI),
+    MongooseModule.forRoot(process.env.MONGO_URI, {
+      dbName: 'nestjs',
+    }),
     CatsModule,
   ],
   controllers: [AppController],
